@@ -15,12 +15,12 @@ public class Code02_LeftRightSameTreeNumber {
 	}
 
 	// 时间复杂度O(N * logN)
-	public static int sameNumber1(Node head) {
-		if (head == null) {
-			return 0;
-		}
-		return sameNumber1(head.left) + sameNumber2(head.right) + (same(head.left, head.right) ? 1 : 0);
-	}
+//	public static int sameNumber1(Node head) {
+//		if (head == null) {
+//			return 0;
+//		}
+//		return sameNumber1(head.left) + sameNumber2(head.right) + (same(head.left, head.right) ? 1 : 0);
+//	}
 
 	public static boolean same(Node h1, Node h2) {
 		if (h1 == null ^ h2 == null) {
@@ -34,11 +34,11 @@ public class Code02_LeftRightSameTreeNumber {
 	}
 
 	// 时间复杂度O(N)
-	public static int sameNumber2(Node head) {
-		String algorithm = "SHA-256";
-		Hash hash = new Hash(algorithm);
-		return process(head, hash).ans;
-	}
+//	public static int sameNumber2(Node head) {
+//		String algorithm = "SHA-256";
+//		Hash hash = new Hash(algorithm);
+//		return process(head, hash).ans;
+//	}
 
 	public static class Info {
 		public int ans;
@@ -50,16 +50,16 @@ public class Code02_LeftRightSameTreeNumber {
 		}
 	}
 
-	public static Info process(Node head, Hash hash) {
-		if (head == null) {
-			return new Info(0, hash.hashCode("#,"));
-		}
-		Info l = process(head.left, hash);
-		Info r = process(head.right, hash);
-		int ans = (l.str.equals(r.str) ? 1 : 0) + l.ans + r.ans;
-		String str = hash.hashCode(String.valueOf(head.value) + "," + l.str + r.str);
-		return new Info(ans, str);
-	}
+//	public static Info process(Node head, Hash hash) {
+//		if (head == null) {
+//			return new Info(0, hash.hashCode("#,"));
+//		}
+//		Info l = process(head.left, hash);
+//		Info r = process(head.right, hash);
+//		int ans = (l.str.equals(r.str) ? 1 : 0) + l.ans + r.ans;
+//		String str = hash.hashCode(String.valueOf(head.value) + "," + l.str + r.str);
+//		return new Info(ans, str);
+//	}
 
 	public static Node randomBinaryTree(int restLevel, int maxValue) {
 		if (restLevel == 0) {
@@ -78,7 +78,7 @@ public class Code02_LeftRightSameTreeNumber {
 		int maxValue = 4;
 		int testTime = 100000;
 		System.out.println("测试开始");
-		for (int i = 0; i < testTime; i++) {
+		/*for (int i = 0; i < testTime; i++) {
 			Node head = randomBinaryTree(maxLevel, maxValue);
 			int ans1 = sameNumber1(head);
 			int ans2 = sameNumber2(head);
@@ -87,7 +87,7 @@ public class Code02_LeftRightSameTreeNumber {
 				System.out.println(ans1);
 				System.out.println(ans2);
 			}
-		}
+		}*/
 		System.out.println("测试结束");
 
 	}

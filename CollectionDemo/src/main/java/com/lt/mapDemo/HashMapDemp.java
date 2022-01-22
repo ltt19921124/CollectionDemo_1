@@ -20,10 +20,6 @@ public class HashMapDemp {
 
         System.out.println(hm.size());
         System.out.println(hm.get(12));
-
-
-
-
     }
 
     public void method() {

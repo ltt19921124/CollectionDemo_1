@@ -56,15 +56,12 @@ public class Student{
 
 }
 //外部比较器使用较多，扩展性好
-
 //外部比较器
 class Bijiao01 implements Comparator<Student> {
     @Override
     public int compare(Student o1, Student o2) {
         //比较年龄
-
         return o1.getAge() - o2.getAge() ;
-
     }
 }
 
@@ -75,7 +72,6 @@ class Bijiao02 implements Comparator<Student> {
         //比较年龄
 
         return o1.getName().compareTo(o2.getName()) ;
-
     }
 }
 
@@ -83,7 +79,6 @@ class Bijiao03 implements Comparator<Student> {
     @Override
     public int compare(Student o1, Student o2) {
         //年龄相同的情况比较身高
-
 //        return o1.getName().compareTo(o2.getName()) ;
         if ((o1.getAge() - o2.getAge() == 0)){
             return ((Double)o1.getHeight()).compareTo((Double) o2.getHeight());

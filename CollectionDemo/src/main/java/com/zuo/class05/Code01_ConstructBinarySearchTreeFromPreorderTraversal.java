@@ -12,6 +12,7 @@ public class Code01_ConstructBinarySearchTreeFromPreorderTraversal {
 		public TreeNode right;
 
 		public TreeNode() {
+
 		}
 
 		public TreeNode(int val) {
